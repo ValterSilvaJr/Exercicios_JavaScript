@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula de JavaScript - Ex002</title>
+    <style>
+        body {
+            background-color: #5d5de2;
+            color: white; /* Cor do texto*/
+            font: normal 20pt Arial;
+        }
+        h1.titulo {
+            color: #ffff00;
+        }   
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Olá, Mundo!</h1> <!-- Titulo -->
+    <p>Esse é um parágrafo!</p>
+    <script>
+        var n1 = Number(window.prompt('Digite o primeiro número'));
+        var n2 = Number(window.prompt('Digite o segundo número'));
+        // var n1 = Number.parseInt(window.prompt('Digite o primeito número'));
+        // var n2 = Number.parseInt(window.prompt('Digite o segundo número'));
+        var s = n1+n2;
+
+        /*Template String - Na nova versão do ECMA script, utilizando a crase pode se definir o nome
+        da variável dentro das chaves ${nome_da_variavel} para exibi-lá, sem a necessidade
+        de usar a concatenação utiliznado o operador '+', como por exemplo: 
+
+            window.alert('seu nome é ' + nome_da_variavel) utilizando a concatenação
+            window.alert(`seu nome é ${nome_da_variavel}`) utilizando o template String
+
+        */
+       
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${s.toString()}`);
+        // window.alert('A soma dos valores é ' + s.toString());
+        //window.alert('A soma dos valores é ' + String(s));
+        
+        //Converte o valor digitado para a moeda local substituindo o '.' por ',' no caso do Brasil
+        s.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'}).replace('.', ',');
+    </script>
+</body>
+</html>
