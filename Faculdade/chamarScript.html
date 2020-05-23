@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            //Função global
+            function MyFunction(id, info) {
+                document.getElementById(id).innerHTML = "Alterado | " + "Parâmetro: " + id + " (" + info + ")";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- JAVASCRIPT CRIADO NO HEAD -->
+        <h2>JavaScript Criado no Head</h2>
+        <p id="headJS">Inicio...</p>
+        <script>
+            var headJS = "headJS";
+            var headMessage = "Este parâmetro está vindo do headJS";
+        </script>
+        <button type="submit" onclick="MyFunction(headJS, headMessage)">Clique aqui</button>
+        <br><br>
+
+        <!-- JAVASCRIPT CRIADO NO BODY -->
+        <h2>JavaScript Criado no Body</h2>
+        <p id="bodyJS">Inicio...</p>
+        <script>
+            var bodyJS = "bodyJS";
+            var bodyMessage = "Este parâmetro está vindo do bodyJS";
+
+            //Função interna do bodyJS
+            function BodyFunction() {
+                document.getElementById("bodyJS").innerHTML = "Alterado por função local no bodyJS"
+            }
+        </script>
+        <button type="submit" onclick="MyFunction(bodyJS, bodyMessage)">Por Parâmetro</button>
+        <button type="submit" onclick="BodyFunction()">Por Função</button>
+        <br><br>
+
+        <!-- JAVASCRIPT CRIADO EM UM ARQUIVO EXTERNO -->
+        <h2>JavaScript criado em um arquivo externo</h2>
+        <p id="externoJS">Inicio...</p>
+        <script src="externo.js"></script>
+        <button type="submit" onclick="MyFunction(externoJS, externoMessage)">Chamar arquivo externo</button>
+        <br><br>
+    </body>
+</html>

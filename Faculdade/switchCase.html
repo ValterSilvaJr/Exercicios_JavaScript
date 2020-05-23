@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Decisão condicional de multiplas escolhas</title>
+    </head>
+    <body onload="document.formulario.dia.focus()"> <!-- OnLoad coloca o foco para o campo DIA do formulario sempre quando a página carregar -->
+        <h1>Programação de Interfaces (Aula 5)</h1>
+        <h3>Escolha o dia da semana (1 a 7)</h3>
+        <form id="formulario" name="formulario">
+            <input type="text" name="dia" id="dia">
+            <button type="submit" onclick="ExibirDia()">Clique aqui</button>
+        </form>
+    </body>
+    <script>
+        function ExibirDia() {
+            var form = document.getElementById("formulario");
+            form.addEventListener("submit", function(event) {
+                switch(form.dia.value) {
+                    case '1':
+                        alert("DOMINGO");
+                        break;
+                    case '2':
+                        alert("SEGUNDA-FEIRA");
+                        break;
+                    case '3':
+                        alert("TERÇA-FEIRA");
+                        break;    
+                    case '4':
+                        alert("QUARTA-FEIRA");
+                        break;
+                    case '5':
+                        alert("QUINTA-FEIRA");
+                        break;
+                    case '6':
+                        alert("SEXTA-FEIRA");
+                        break;
+                    case '7':
+                        alert("SABADO");
+                        break;
+                    default:
+                        alert("Dia inválido");
+                        break;
+                } 
+            });
+        }        
+    </script>
+</html>
